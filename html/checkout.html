@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/reserve.css">
+    <link rel="stylesheet" href="../css/food.css">
+    <link rel="stylesheet" href="../css/ppage.css">
+    <link rel="stylesheet" href="../css/cart.css">
+    <link rel="stylesheet" href="../css/checkout.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body style="position: relative;">
+
+    <nav class="navbar navbar-primary navbar-expand-md d-flex justify-content-between w-100 n-s">
+        <div class="d-flex justify-content-around w-50 p-0">
+
+
+            <div>
+                <a href="index.html" class="nav-brand">
+                    <img class="n-img" src="../images/fdlogo.png" alt="">
+
+                </a>
+            </div>
+
+            <div>
+                <button class="navbar-toggler" data-toggle="collapse" onclick="openNav()">
+                    <i class="fa fa-bars" style="color: white;"></i>
+
+
+                </button>
+
+
+            </div>
+
+
+            <div style="width: 100%;" id="myNav" class="overlay">
+
+
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+                    ×
+                </a>
+                <div class="overlay-content">
+                    <i class="fa fa-star ov-str"></i>
+                    <a href="index.html" class="ov-cont">H O M E</a>
+                    <a href="#" class="ov-cont">M E N U</a>
+                    <a href="#" class="ov-cont">C O N T A C T &nbsp; U S</a>
+                    <a href="#" class="ov-cont">R E S E R V A T I O N</a>
+                    <a href="#" class="ov-cont">V I E W &nbsp; C A R T</a>
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+        <div class="collapse navbar-collapse p-0 lp-sd">
+            <input type="text" class="lp-sip form-control" placeholder="search">
+            <button class="btn lp-sbt">SEARCH</button>
+        </div>
+
+        <div class="collapse navbar-collapse w-100 p-0 ml-5">
+            <ul class="navbar-nav ">
+                <li class="nav-item ml-2" style="min-width: fit-content;">
+                    <a href="index.html" class="nav-link  n-li">
+                        HOME
+                        <div class="n-dot1"></div>
+                    </a>
+
+                </li>
+
+                <li class="nav-item ml-2" style="min-width: fit-content;">
+                    <a href="menu.html" class="nav-link n-li">
+                        MENU
+                        <div class="n-dot1"></div>
+                        <!-- <i class="fa fa-angle-down"></i> -->
+                    </a>
+
+                </li>
+
+                <li class="nav-item ml-2" style="min-width: fit-content;" id="sgn">
+                    <a href="#" class="nav-link n-li" onclick="signInM()">
+                        SIGN IN
+                        <div class="n-dot1"></div>
+                    </a>
+
+                </li>
+
+                <div hidden class="x-wso dropdown nav-item ml-2" id="prof" style="min-width: fit-content;">
+                    <a href="#" class="nav-link n-li dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-user"></i> <span id="pName" class="yod"></span>
+                        <!-- <div class="n-dot1"></div> -->
+                    </a>
+                    <span>
+                        <a href="#"  id="user"></a>
+                    </span>
+
+                    <div class=" dropdown-menu lp-dd">
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link ml-3 n-li">
+                                Profile
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="ml-3">
+                                <button class="btn btn-danger" style="font-weight: 600;" onclick="signOut()">
+                                    SIGN OUT
+                                </button>
+                            </a>
+                        </li>
+
+                    </div>
+                </div>
+
+                
+
+                <li class="nav-item ml-2" style="min-width: fit-content;">
+                    <a href="reservation.html" class="nav-link n-li">
+                        RESERVATIONS
+                        <div class="n-dot1"></div>
+                    </a>
+
+                </li>
+
+                <button class="nav-item n-scb ml-2" style="min-width: fit-content; position: relative;"
+                    onclick="openCart()">
+                    <i class="fa fa-shopping-cart n-sc" style="color: goldenrod;"></i>
+                    <div class="n-dot"></div>
+                    <div id="cNumb" class="n-scco"></div>
+                </button>
+
+            </ul>
+
+
+
+        </div>
+
+    </nav>
+    <main class="container-fluid co-top">
+
+        <div>
+            <h4 class="co-th5">C h e c k O u t</h4>
+        </div>
+
+        <div class="container-fluid x-zoom co-ovel">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card card-body co-card">
+                        <div class="co-btx mt-3 ml-3">
+                            BILLING DETAILS
+                        </div>
+
+                        <div class="x-inp1 ml-3 mt-5">
+                            <input type="text" class="form-control x-inp" required id="checkO">
+                            <span class="x-float">NAME *</span>
+                        </div>
+
+                        <div class="x-inp1 ml-3">
+                            <input type="text" class="form-control x-inp" required id="checkO">
+                            <span class="x-float">TELEPHONE NUMBER *</span>
+                        </div>
+
+                        <div class="x-inp1 ml-3">
+                            <input type="text" class="form-control x-inp" required id="checkO">
+                            <span class="x-float">STREET ADDRESS * house number,street name</span>
+                        </div>
+
+                        <select name="state" id="checkO" class="ml-3 mt-4 co-loc">
+                            <option value="LOCATION">LOCATION</option>
+                            <option value="LEKKI">LEKKI</option>
+                            <option value="AJAH">AJAH</option>
+                            <option value="VI">VI</option>
+                            <option value="IKEJA">IKEJA</option>
+
+                        </select>
+
+                        <div class="x-inp1 ml-3">
+                            <input type="text" class="form-control x-inp" required id="checkO">
+                            <span class="x-float">EMAIL *</span>
+                        </div>
+
+
+                    </div>
+
+                    <div class="co-card mt-5">
+                        <div class="x-inp1 ml-3">
+                            <input type="text" class="form-control x-inp" required id="checkO">
+                            <span class="x-float">ORDER NOTES (SPECIAL NOTES)</span>
+                        </div>
+
+                        <div class="co-nws d-flex mt-5 ml-4">
+
+                            <input type="checkbox">
+                            <p class="co-nws ml-3"> YES, I'M OK WITH YOU SENDING ME ADDITIONAL NEWSLETTER <br> AND EMAIL
+                                CONTENT (OPTIONAL)</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="card card-body co-card2" id="order">
+                        <div>
+                            <h4 class="co-yo">Your Order</h4>
+                        </div>
+
+                        <div class="ml-5 w-75 co-dco">
+                            <div class="d-flex justify-content-between p-2 mt-2">
+                                <p>Products</p>
+                                <p>SubTotal</p>
+                            </div>
+
+                            <div class="p-2 mt-2" id="orditem" >
+                                <!-- <div class="d-flex justify-content-between ">
+                                    <p>Shawarma <span> X </span><span> 2 </span></p>
+                                <p> <span>&#8358;</span> 5200</p>
+                                </div>
+
+                              <div class="d-flex justify-content-between ">
+                                <p>Shawarma <span> X </span><span> 2 </span></p>
+                                <p> <span>&#8358;</span> 5200</p>
+                              </div> -->
+                            </div>
+
+                            <div class="d-flex justify-content-between p-2 mt-2">
+                                <p>SubTotal</p>
+                                <p> <span id="sbt2" >&#8358;</span></p>
+
+                            </div>
+
+                            <div class="d-flex justify-content-between p-2 mt-2">
+                                <p>Shipping</p>
+                                <p><span id="selAdd" class="yod"></span><span> &nbsp; &#8358;</span><span id="shpfees" class="yod"></span></p>
+                            </div>
+
+                            <div class="d-flex justify-content-between p-2 mt-2">
+                                <p>Total</p>
+                                <p> <span>&#8358;</span> <span id="sbt3" class="yod"></span></p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card card-body co-card2" style="margin-top: 12%;">
+                        <div class="co-po">
+                            <p>Make payments with your debit/credit card</p>
+                            <p>Your personal data will be used to process your order</p>
+                            <p>Read more in our Privacy Policy</p>
+                        </div>
+
+                        <div style="display: flex; justify-content: center; align-items: center;">
+                            <button class="btn co-pob" onclick="checkOut()"> Place Order</button>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <div hidden class="rr-load" id="loader">
+        <div class="ch-ripple">
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+
+
+
+
+    <div id="z" class="modal fade ch-mdf">
+        <div class="modal-dialog ch-mdd" style="position: relative;">
+            <div class="modal-content" style="background-color: rgba(0, 0, 0, 0.6);" id="modalz">
+
+                <div class="modal-header d-flex justify-content-between">
+                    <img class="rd-img" src="../images/fdlogo.png" alt="">
+                    <h5 class="modal-title ml-5 mt-2 rr-rst">P a y m e n t</h5>
+
+                    <button type="button" class="close" data-dismiss="modal" onclick="XX()">&times;</button>
+
+                </div>
+
+                <div class="modal-body">
+                    <div class="rd-hdd">
+                        <h4 class="rd-hd">PAYMENT DETAILS</h4>
+                    </div>
+                    <div>
+                        <div class="mt-4 ml-3">
+                            <input type="number" class="form-control x-inp" placeholder="CARD DETAILS *" id="crddt">
+                        </div>
+
+                        <div class="mt-4 ml-3">
+                            <input type="password" class="form-control x-inp" placeholder="CVV *" id="crddt">
+
+                        </div>
+
+                        <div class=" mt-4 ml-3">
+                            <input type="password" class="form-control x-inp" placeholder="PIN *" id="crddt">
+                        </div>
+
+                        <div style="display: flex; justify-content: center; align-items: center;">
+                            <button class="btn co-pomb" onclick="payOut()"> P A Y</button>
+                        </div>
+
+
+                    </div>
+
+
+
+
+
+                </div>
+
+
+            </div>
+
+            <div hidden class="modal-content rr-load" id="mloader">
+                <div class="chm-ripple">
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+
+            <div hidden class="modal-content ch-msg" id="ordmsg">
+                <div class="rsv-txt">
+                    <h1 class="rs-txt1">SUCCESS</h1>
+                    <p class="rs-txt">your order is being processed...</p>
+                    <p class="rs-txt">Kindly save the order code to track your order <br>
+                        <span style="font-weight: bolder;">OR</span>
+                        <span style="font-weight: bolder;" id="ordcode" class="yod"></span>
+                    </p>
+                    <p class="rs-txt">Thank you for our patronage.. Gracias</p>
+
+                    <div class="rs-tbb"><button class="btn rsv-tbt" onclick="okayM()">OKAY</button></div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+
+
+<script src="../js/foodie.js"></script>
+
+
+<script>
+    let total2 = 0
+    let total3 = 0
+
+    if (localStorage.getItem('foodItems')) {
+        foodItem = JSON.parse(localStorage.getItem('foodItems'));
+        showOrder();
+
+    }
+
+    if (localStorage.getItem('shipLocation')) {
+        address = JSON.parse(localStorage.getItem('shipLocation'));
+        addL()
+    }
+
+    if (localStorage.getItem('ordCode')) {
+        oCode = JSON.parse(localStorage.getItem('ordCode'));
+    }
+
+    function showOrder(params) {
+        let Order = document.getElementById('order')
+        let OrderItem = document.getElementById('orditem')
+        for (let a = 0; a < foodItem.length; a++) {
+            let i = foodItem[a]
+            let SubTotal1 = parseInt(i.itemPrice) * parseInt(i.Quantity)
+            OrderItem.innerHTML += `
+          <div class="d-flex justify-content-between ">
+          <p class="c-yot"><span class="yod">${i.itemName}</span><span> &nbsp; X </span><span class="yod"> ${i.Quantity}</span></p>
+                        <p> <span>&#8358;</span><span class="yod">${SubTotal1} </span></p>
+                     </div>
+          `
+
+        }
+
+        addT()
+
+    }
+
+    function addT(params) {
+        let subTot2 = document.getElementById('sbt2')
+        for (let a = 0; a < foodItem.length; a++) {
+            let i = foodItem[a]
+            let SubTotal1 = parseInt(i.itemPrice) * parseInt(i.Quantity)
+            total2 += parseInt(SubTotal1);
+            subTot2.innerHTML = total2;
+
+
+        }
+    }
+
+    function addL(params) {
+        let subTot3 = document.getElementById('sbt3')
+        let selectedLoc = document.getElementById('selAdd')
+        let shipFees = document.getElementById('shpfees')
+        for (let p = 0; p < address.length; p++) {
+            console.log(shipFees.innerHTML);
+            selectedLoc.innerHTML = address[p].location
+            shipFees.innerHTML = parseInt('500')
+            subTot3.innerHTML = total2 + parseInt(shipFees.innerHTML)
+            document.querySelector('.co-loc').value = address[p].location
+
+        }
+    }
+
+
+    function sI(params) {
+        let loggedIn;
+    if (localStorage.getItem('logIn')) {
+        loggedIn = JSON.parse(localStorage.getItem('logIn'));
+        
+    }
+    if (localStorage.getItem('sgnInfo')) {
+        signupDetails = JSON.parse(localStorage.getItem('sgnInfo'));
+    }
+
+    if (localStorage.getItem('sIdts')) {
+        e = JSON.parse(localStorage.getItem('sIdts'));
+    }
+   
+    if (signupDetails.length > 0) {
+        for (let f = 0; f < signupDetails.length; f++) {
+            if (f == e) {
+                console.log(signupDetails[f].fName);
+               pName.innerHTML = signupDetails[f].fName
+            }
+            
+        }
+    }
+    if (loggedIn == true) {
+        sgn.hidden = true;
+        prof.hidden = false;
+        loggedIn = false
+    }
+
+    else if (loggedIn == false) {
+        sgn.hidden = false;
+        prof.hidden = true;
+    }
+
+}
+
+sI()
+
+
+function okayM(params) {
+  orderMessage.hidden = true;
+let orderCode = document.getElementById("ordcode").innerHTML;
+let pName = document.getElementById("pName").innerHTML;
+
+  oCode.push({orderCode, pName});
+  localStorage.setItem("ordCode", JSON.stringify(oCode));
+  mloader.hidden = false;
+  saveOrder();
+
+  setTimeout(() => {
+    mloader.hidden = true;
+    window.location.href = "./checkout.html";
+  }, 1000);
+}
+
+function saveOrder(params) {
+  sBN();
+  ordDetails.push(foodItem);
+  localStorage.setItem("ordInfo", JSON.stringify(ordDetails));
+  saveBn();
+}
+
+
+</script>

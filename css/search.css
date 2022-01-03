@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Hahmlet:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel&family=Dancing+Script:wght@600&family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel&family=Dancing+Script:wght@600&display=swap");
+.s-body {
+  background: url("../images/gbb.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  color: white !important;
+}
+
+.ss-ovel {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 96%;
+  margin-left: 2%;
+  border: 2px solid goldenrod;
+  height: 100%;
+  margin-top: 10%;
+  border-radius: 10px;
+}
+
+.ss-mefi {
+  margin-top: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.ss-txt {
+  margin-top: 3%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-family: "Cinzel", serif;
+  font-weight: bold;
+  font-size: 22px;
+  color: white;
+  text-shadow: 1px 0px rgba(206, 138, 14, 0.6);
+}
+
+/*# sourceMappingURL=search.css.map */

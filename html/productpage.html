@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="ppage.css">
+    <link rel="stylesheet" href="food.css">
+    <link rel="stylesheet" href="../css/reserve.css">
+    <link rel="stylesheet" href="../css/checkout.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+
+
+    <main class="container-fluid pp-top">
+        <nav class=" navbar navbar-primary navbar-expand-md d-flex justify-content-between w-100 n-s">
+            <div class="d-flex justify-content-around w-50 p-0">
+
+
+                <div>
+                    <a href="index.html" class="nav-brand">
+                        <img class="n-img" src="../images/fdlogo.png" alt="">
+
+                    </a>
+                </div>
+
+                <div>
+                    <button class="navbar-toggler" data-toggle="collapse" onclick="openNav()">
+                        <i class="fa fa-bars" style="color: white;"></i>
+
+
+                    </button>
+
+
+                </div>
+
+
+                <div style="width: 100%;" id="myNav" class="overlay">
+
+
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+                        ×
+                    </a>
+                    <div class="overlay-content">
+                        <i class="fa fa-star ov-str"></i>
+                        <a href="index.html" class="ov-cont">H O M E</a>
+                        <a href="menu.html" class="ov-cont">M E N U</a>
+                        <a href="#" class="ov-cont">C O N T A C T &nbsp; U S</a>
+                        <a href="reservation.html" class="ov-cont">R E S E R V A T I O N</a>
+                        <a href="cart.html" class="ov-cont">V I E W &nbsp; C A R T</a>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+            <div class="collapse navbar-collapse p-0 lp-sd">
+                <input type="text" class="lp-sip form-control" placeholder="search">
+                <button class="btn lp-sbt">SEARCH</button>
+            </div>
+
+            <div class="collapse navbar-collapse w-100 p-0 ml-5">
+                <ul class="navbar-nav ">
+                    <li class="nav-item ml-2" style="min-width: fit-content;">
+                        <a href="index.html" class="nav-link  n-li">
+                            HOME
+                            <div class="n-dot1"></div>
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item ml-2" style="min-width: fit-content;">
+                        <a href="menu.html" class="nav-link n-lih">
+                            MENU
+                            <div class="n-dot"></div>
+                            <!-- <i class="fa fa-angle-down"></i> -->
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item ml-2" style="min-width: fit-content;" id="sgn">
+                        <a href="#" class="nav-link n-li" onclick="signInM()">
+                            SIGN IN
+                            <div class="n-dot1"></div>
+                        </a>
+    
+                    </li>
+    
+    
+    
+                    <div hidden class="x-wso dropdown nav-item ml-2" id="prof" style="min-width: fit-content;">
+                        <a href="#" class="nav-link n-li dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-user"></i> <span id="pName"></span>
+                            <!-- <div class="n-dot1"></div> -->
+                        </a>
+                        <span>
+                            <a href="#"  id="user"></a>
+                        </span>
+    
+                        <div class=" dropdown-menu lp-dd">
+    
+                            <li class="nav-item">
+                                <a href="#" class="nav-link ml-3 n-li">
+                                    Profile
+                                </a>
+    
+                            </li>
+    
+                            <li class="nav-item">
+                                <a href="#" class="ml-3">
+                                    <button class="btn btn-danger" style="font-weight: 600;" onclick="signOut()">
+                                        SIGN OUT
+                                    </button>
+                                </a>
+                            </li>
+    
+                        </div>
+                    </div>
+    
+    
+
+                    <li class="nav-item ml-2" style="min-width: fit-content;">
+                        <a href="reservation.html" class="nav-link n-li">
+                            RESERVATIONS
+                            <div class="n-dot1"></div>
+                        </a>
+
+                    </li>
+
+                    <button class="nav-item n-scb ml-2" style="min-width: fit-content; position: relative;"
+                        onclick="openCart()">
+                        <i class="fa fa-shopping-cart n-sc"></i>
+                        <div id="cNumb" class="n-scco"></div>
+                    </button>
+
+                </ul>
+
+
+
+            </div>
+
+        </nav>
+
+        <div class="container x-zoom" style="margin-top: 130px;" id="ppa">
+   
+        </div>
+
+
+
+    </main>
+
+
+    <main class="container-fluid pp-rev">
+        <div class="lp-ovel">
+            <div class="pp-rt">
+                <h3 class="pp-rtt">REVIEWS <span id="rno"></span></h3>
+            </div>
+
+            <div class="pp-rvd">
+                <p>There are no reviews yet.</p>
+
+                <p>Be the first to review <span id="pnam"></span></p>
+                <p>Your email address will not be published. Required fields are marked *</p>
+            </div>
+
+            <div class="pp-rvd2">
+
+
+            </div>
+
+            <div class="pp-rvin">
+                <div class="mt-5">
+                    <p class="pp-rvn">NAME <span style="color: red;">*</span></p>
+                    <input type="text" class="pp-rvinp " id="review">
+                </div>
+
+                <div class="mt-5">
+                    <p class="pp-rvn">EMAIL <span style="color: red;">*</span></p>
+                    <input type="text" class="pp-rvinp" id="review">
+                </div>
+
+                <div class="mt-5">
+                    <p>REVIEW <span style="color: red;">*</span></p>
+                    <textarea name="" id="review" cols="30" rows="10" class="pp-rvta"></textarea>
+
+                    <button class="pp-rvbt" onclick="UComment()"> S E N D &nbsp; R E V I E W</button>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+    </main>
+
+
+    <div id="s" class="modal fade ch-mdf">
+        <div class="modal-dialog ch-mdd" style="position: relative;">
+            <div class="modal-content" style="background-color: rgba(0, 0, 0, 0.6);" id="modalz">
+
+                <div class="modal-header d-flex justify-content-between">
+                    <img class="rd-img" src="../images/fdlogo.png" alt="">
+                    <h5 class="modal-title ml-5 mt-2 rr-rst" id="hdnm"></h5>
+
+                    <button type="button" class="close" data-dismiss="modal" onclick="Xlp()">&times;</button>
+
+                </div>
+
+                <div class="modal-body" id="sgIn">
+                    <div class="rd-hdd">
+                        <h4 class="rd-hd">SIGN IN</h4>
+                    </div>
+                    <div>
+                        <div class="mt-4 ml-3">
+                            <input type="text" class="form-control x-inp" placeholder="EMAIL*" id="siN">
+                        </div>
+
+                        <div class="mt-4 ml-3">
+                            <input type="password" class="form-control x-inp" placeholder="PASSWORD *" id="siP">
+
+                        </div>
+
+                        <div style="display: flex; justify-content: center; align-items: center;">
+                            <button class="btn co-pomb" onclick="signIn()"> S I G N &nbsp; I N</button>
+                        </div>
+
+                        <div style="display: flex; justify-content: center; align-items: center;">
+                            <p class="x-md">
+                                Don't have an account? <button class="btn lp-cemp" onclick="stsu()">Sign Up</button>
+                            </p>
+                        </div>
+
+
+                    </div>
+
+
+
+
+
+                </div>
+
+                <div hidden class="modal-body sm-load" id="smload">
+                    <p class="x-md">
+                        You don't have an account, <br> please <button class="btn lp-cemp" onclick="stsu()">Sign Up</button> here
+                    </p>
+                </div>
+
+
+                <div hidden class="modal-content rr-load" id="mloader">
+                    <div class="chm-ripple">
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+
+                <div hidden class="modal-body" id="sgUp">
+                    <div class="rd-hdd">
+                        <h4 class="rd-hd">SIGN UP</h4>
+                    </div>
+                    <div>
+                        <div class="mt-4 ml-3">
+                            <input type="text" class="form-control x-inp" placeholder="SURNAME*" id="sgupdts">
+                        </div>
+
+                        <div class="mt-4 ml-3">
+                            <input type="text" class="form-control x-inp" placeholder="FIRST NAME*" id="sgupdts">
+                        </div>
+
+                        <div class="mt-4 ml-3">
+                            <input type="number" class="form-control x-inp" placeholder="MOBILE NO*" id="sgupdts">
+                        </div>
+
+                        <div class="mt-4 ml-3">
+                            <input type="text" class="form-control x-inp" placeholder="EMAIL*" id="sgupdts">
+                        </div>
+
+                        <div class="mt-4 ml-3">
+                            <input type="password" class="form-control x-inp" placeholder="PASSWORD*" id="sgupdts">
+                        </div>
+
+                        <div class="mt-4 ml-3">
+                            <input type="password" class="form-control x-inp" placeholder="RE-ENTER PASSWORD*"
+                                id="sgupdts">
+                        </div>
+
+                        <div style="display: flex; justify-content: center; align-items: center;">
+                            <button class="btn co-pomb" onclick="signUp()"> S I G N &nbsp; U P</button>
+                        </div>
+
+                        <div style="display: flex; justify-content: center; align-items: center;">
+                            <p class="x-md">
+                                Already have an account? <button class="btn lp-cemp" onclick="stsi()">Sign In</button>
+                            </p>
+                        </div>
+
+
+                    </div>
+
+
+
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+
+
+    
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+
+<script src="../js/foodie.js"></script>
+
+
+<script>
+
+    let foodId;
+    let foodiesList;
+    let foodieName = document.getElementById('pnam')
+    let reviewed = document.querySelector('.pp-rvd2')
+    let notRev = document.querySelector('.pp-rvd')
+    let reviewNo = document.getElementById('rno')
+
+    if (localStorage.getItem('foodClicked')) {
+        foodId = localStorage.getItem('foodClicked');
+    }
+
+    if (localStorage.getItem('foodies')) {
+        let b = localStorage.getItem('foodies')
+        foodiesList = JSON.parse(b);
+    }
+
+    if (localStorage.getItem('cmtInfo')) {
+        commentInfo = JSON.parse(localStorage.getItem('cmtInfo'));
+    }
+
+    if (foodiesList.length > 0) {
+        foodiesList.forEach((food, i) => {
+            if (i == foodId) {
+                prodPage.innerHTML += `
+                <div class="card card-body  pp-card" >
+                <div class="row ">
+                    <div class="col-sm-6 ">
+                        <img id="image" class="pp-img" src="${food.imagePath}" alt="">
+    
+                    </div>
+    
+                    <div class="col-sm-6 ">
+                        <div>
+                            <h3 id="iName" class="pp-pnm">${food.foodName}</h3>
+                            <div class="d-flex pp-pri">
+                                <span>&#8358;</span>
+                                <span id="iPrice" >${food.foodPrice}</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group mt-5">
+                            <input id="quantity" type="number" placeholder="0" class="pp-inp form-control">
+                            
+                        </div>
+
+                        <div>
+                            <button class="btn pp-btn" onclick="add()">
+                                A D D &nbsp; T O &nbsp; C A R T
+                            </button>
+                        </div>
+
+                        <div>
+                            <h5 class="pp-cat">category :${food.category}</h5>
+                        </div>
+    
+                    </div>
+                </div>
+
+                
+            </div>`
+
+                foodieName.innerHTML += `${food.foodName}`
+            }
+        });
+    }
+
+
+    function showComm(params) {
+      if( commentInfo.length > 0 ){
+        for (let c = 0; c < commentInfo.length; c++) {
+            let f = commentInfo[c]
+            reviewed.innerHTML += `
+               <p class="pp-rdn">${f.name}</p>
+                <p class="pp-rdm">${f.comment}</p>
+                <p class="pp-reddt">Aug,02,2021   5:00PM</p>
+                `
+
+            reviewNo.innerHTML = `${commentInfo.length}`
+        }
+        reviewed.style.display = 'block'
+            notRev.style.display = 'none'
+      }
+
+      else {
+        reviewed.style.display = 'none'
+            notRev.style.display = 'block'
+      }
+
+
+    }
+    showComm();
+
+
+    function UComment(params) {
+        let Review = document.querySelectorAll('#review')
+        let newComment = { name: "", comment: "" }
+
+        for (let a = 0; a < Review.length; a++) {
+            let z = Review[a]
+
+            if (a == 0) {
+                newComment.name = z.value
+            }
+
+            else if (a == 2) {
+                newComment.comment = z.value
+            }
+
+        }
+
+        if (Review[0].value == "") {
+            alert('Please put a name')
+        }
+
+        else if (Review[1].value == "") {
+            alert('Please input an email, it wont be Published')
+        }
+
+        else if (Review[1].value == "") {
+            alert('Please write a comment')
+        }
+
+        else {
+            commentInfo.push(newComment);
+            localStorage.setItem('cmtInfo', JSON.stringify(commentInfo))
+            showComm()
+            reviewed.style.display = 'block'
+            notRev.style.display = 'none'
+            Review[0].value = "";
+            Review[1].value = "";
+            Review[2].value = "";
+            
+
+        }
+    }
+
+    function sI(params) {
+        let loggedIn;
+    if (localStorage.getItem('logIn')) {
+        loggedIn = JSON.parse(localStorage.getItem('logIn'));
+        
+    }
+    if (localStorage.getItem('sgnInfo')) {
+        signupDetails = JSON.parse(localStorage.getItem('sgnInfo'));
+    }
+
+    if (localStorage.getItem('sIdts')) {
+        e = JSON.parse(localStorage.getItem('sIdts'));
+    }
+   
+    if (signupDetails.length > 0) {
+        for (let f = 0; f < signupDetails.length; f++) {
+            if (f == e) {
+                console.log(signupDetails[f].fName);
+               pName.innerHTML = signupDetails[f].fName
+            }
+            
+        }
+    }
+    if (loggedIn == true) {
+        sgn.hidden = true;
+        prof.hidden = false;
+        loggedIn = false
+    }
+
+    else if (loggedIn == false) {
+        sgn.hidden = false;
+        prof.hidden = true;
+    }
+
+}
+
+    sI()
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

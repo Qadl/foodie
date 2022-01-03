@@ -1,0 +1,284 @@
+@import url("https://fonts.googleapis.com/css2?family=Hahmlet:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel&family=Dancing+Script:wght@600&family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel&family=Dancing+Script:wght@600&display=swap");
+.rr-top {
+  background: url("../images/hmb.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+}
+
+.rr-ovel {
+  margin-top: 10%;
+  color: white;
+}
+
+.rr-card {
+  width: 100%;
+  margin-left: 5%;
+  border-radius: 10px;
+  border: 2px solid goldenrod;
+  background-color: rgba(0, 0, 0, 0.9);
+  height: fit-content;
+  overflow-y: hidden !important;
+}
+
+.rr-card2 {
+  width: 100%;
+  border-radius: 10px;
+  border: 2px solid goldenrod;
+  background-color: rgba(0, 0, 0, 0.9);
+  height: fit-content;
+}
+
+.rsv-msg {
+  background-color: rgba(0, 0, 0, 0.9);
+  width: 100%;
+  position: absolute;
+  top: 10%;
+  height: 90%;
+}
+.rsv-msg .rsv-txt {
+  position: absolute;
+  top: 21%;
+  border: 2px solid goldenrod;
+  border-radius: 10px;
+  margin-left: 15%;
+  width: 70%;
+  background-image: url("../images/dag.jpg");
+}
+.rsv-msg .rs-txt {
+  text-align: center;
+  font-size: 19px;
+  text-shadow: 1px 0px rgba(206, 138, 14, 0.6);
+  color: white;
+  font-family: "Cinzel", serif;
+}
+.rsv-msg .rs-tbb {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+.rsv-msg .rs-tbb .rsv-tbt {
+  margin-top: 2%;
+  border: 2px solid black;
+  font-family: "Cinzel", serif;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 4%;
+  transition: 0.8s;
+  background: linear-gradient(white, gray);
+}
+.rsv-msg .rs-tbb .rsv-tbt:hover {
+  background: linear-gradient(grey, black);
+  font-family: "Cinzel", serif;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  transition: 0.8s;
+}
+
+.rr-load {
+  position: absolute;
+  top: 10%;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 90%;
+}
+
+.rd-inf {
+  font-size: 19px;
+  text-shadow: 1px 0px rgba(206, 138, 14, 0.6);
+  color: white;
+  font-family: "Cinzel", serif;
+}
+.rd-inf .rd-info {
+  margin-left: 3%;
+  font-size: 19px;
+  text-shadow: 1px 0px rgba(206, 138, 14, 0.6);
+  color: white;
+  font-family: "Cinzel", serif;
+}
+
+.rd-img {
+  width: 90px;
+  height: 90px;
+}
+
+.rd-hdd {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rd-hdd .rd-hd {
+  font-size: 23px;
+  text-shadow: 1px 0px rgba(206, 138, 14, 0.6);
+  color: white;
+  font-family: "Cinzel", serif;
+}
+
+.lds-ripple {
+  display: inline-block;
+  position: absolute;
+  left: 48%;
+  top: 40%;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-ripple div {
+  position: absolute;
+  border: 4px solid goldenrod;
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.lds-ripple div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+
+@keyframes lds-ripple {
+  0% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 72px;
+    height: 72px;
+    opacity: 0;
+  }
+}
+.ch-tx {
+  font-family: "Hahmlet", serif;
+  font-size: 15px;
+}
+
+.chr-bt {
+  margin-top: 10%;
+  border: 2px solid black;
+  font-family: "Cinzel", serif;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 4%;
+  transition: 0.8s;
+  background: linear-gradient(white, gray);
+}
+.chr-bt:hover {
+  background: linear-gradient(grey, black);
+  font-family: "Cinzel", serif;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  transition: 0.8s;
+}
+
+.ch-inp {
+  color: black;
+  border-radius: 7px;
+  border: 2px solid goldenrod;
+  font-family: "Hahmlet", serif;
+  height: 40px;
+}
+.ch-inp:focus {
+  outline: none;
+}
+.ch-inp ::placeholder {
+  color: black;
+  font-family: "Hahmlet", serif;
+  font-size: 15px;
+}
+
+.rr-mdf {
+  background-color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.rr-mdd {
+  margin-top: 10%;
+  background-color: rgba(0, 0, 0, 0.9);
+  border: 2px solid goldenrod;
+  border-radius: 10px;
+  width: 69%;
+}
+
+.rr-rst {
+  font-family: "Lobster", cursive;
+  font-weight: bolder;
+  font-size: 25px;
+  color: goldenrod;
+  margin-top: 4%;
+  text-decoration: overline;
+  text-shadow: 1px 0px rgba(46, 22, 22, 0.6);
+}
+
+@media (max-width: 361px) {
+  .rr-ovel {
+    margin-top: 32%;
+  }
+
+  .rr-card {
+    margin-left: 0%;
+  }
+
+  .ch-tx {
+    font-size: 13px;
+  }
+
+  .chr-bt {
+    font-size: 18px;
+  }
+  .chr-bt:hover {
+    font-size: 18px;
+  }
+
+  .ch-inp {
+    font-size: 13px;
+  }
+
+  .rsv-msg .rs-txt {
+    font-size: 14px;
+  }
+  .rsv-msg .rs-tbb .rsv-tbt {
+    font-size: 14px;
+  }
+  .rsv-msg .rs-tbb .rsv-tbt:hover {
+    font-size: 14px;
+  }
+
+  .rd-img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .rr-rst {
+    font-size: 16px;
+  }
+
+  .rr-mdf {
+    width: 100%;
+  }
+
+  .rr-mdd {
+    width: 90%;
+    margin-top: 20%;
+  }
+
+  .rd-inf {
+    font-size: 16px;
+  }
+  .rd-inf .rd-info {
+    font-size: 16px;
+  }
+
+  .rd-hdd .rd-hd {
+    font-size: 21px;
+  }
+}
+
+/*# sourceMappingURL=reserve.css.map */

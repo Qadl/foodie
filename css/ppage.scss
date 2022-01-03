@@ -1,0 +1,264 @@
+$c: 'Cinzel', serif ;
+$h : 'Hahmlet', serif;
+$w : white;
+@import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Dancing+Script:wght@600&family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Dancing+Script:wght@600&display=swap');
+
+
+.pp-top{
+    background: url('../images/hmb.jpg');
+    background-size:cover;
+    background-position: center;
+    height:100%;
+    width: 100%; 
+}
+
+.n-s{
+    background-color: rgba(0, 0, 0, 1);
+    position: fixed;
+    top: 0px;
+    z-index: 1000;
+}
+
+.pp-card {
+    border-radius: 10px;
+    border: 2px solid goldenrod;
+    background-color: rgba(rgb(0, 0, 0), 0.9);
+}
+
+.pp-img{
+    width: 90%;
+    height: 450px;
+    border-radius: 10px;
+    box-shadow: 5px 0px 5px rgba(253, 253, 253, 0.507);
+}
+
+.pp-tdn{
+    font-size: 21px;
+    text-shadow: 2px  0px rgba(rgb(206, 138, 14), 0.6);
+}
+
+.pp-pnm{
+    font-family: $h;
+        font-weight: bold;
+        font-size: 30px;
+        color: $w;
+        margin-top: 4%;
+        text-shadow: 2px  0px rgba(rgb(206, 138, 14), 0.6);
+
+}
+
+.pp-pri{
+    font-family: $h;
+        font-weight: bold;
+        font-size: 22px;
+        color: $w;
+        margin-top: 4%;
+        text-shadow: 2px  0px rgba(rgb(206, 138, 14), 0.6);
+}
+
+
+.pp-inp{
+    outline: none;
+    border: none;
+    width: 40%;
+    height: 50px;
+    border-radius: 10px;
+    font-family: $h;
+        font-weight: bold;
+        font-size: 22px; 
+        color: black !important;
+
+    &:focus{
+        outline: none;
+        border: none;
+    }
+
+    &::placeholder{
+        font-family: $h;
+        font-weight: bold;
+        font-size: 22px; 
+        color: black;
+    }
+}
+
+
+.pp-btn{
+    margin-top: 10%;
+    background: linear-gradient(red,goldenrod);
+    color: white;
+    font-family: $c;
+    font-weight: bold;
+    border: none;
+
+    &:hover{
+        transition: 1.3s;
+        color: white;
+        font-family: $h;
+        border: none;
+        background: linear-gradient(goldenrod, red);
+    }
+}
+
+.pp-cat{
+    margin-top: 8%;
+    font-family: 'Dancing Script', cursive;
+    font-size: 27px;
+    color: goldenrod;
+}
+
+
+.pp-rev{
+    background: url('../images/gbb.jpg');
+    background-size:cover;
+    background-position: center;
+    height:100%;
+    width: 100%; 
+    color: white !important;
+    margin-top: -3%;
+}
+
+.pp-rt{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+    .pp-rtt{
+        font-family: $h;
+        font-weight: bold;
+        font-size: 25px;
+        color: $w;
+        margin-top: 4%;
+        text-shadow: 2px  0px rgba(rgb(5, 4, 1), 0.6);
+    }
+    
+}
+
+.pp-rvd{
+    font-family: $h;
+    margin-top: 4%;
+    margin-left: 5%;
+        font-weight: bold;
+        font-size: 17px;
+        color: $w;
+}
+
+.pp-rvd2{
+    display: none;
+    margin-top: 4%;
+    margin-left: 5%;
+    font-family: $h;
+    border-radius: 10px;
+    border: 2px solid goldenrod;
+    width: 60%;
+    
+    .pp-rdn{
+        margin-left: 2%;
+        font-size: 22px;
+        text-shadow: 2px  0px rgba(rgb(5, 4, 1), 0.6);
+    }
+
+    .pp-rdm{
+        margin-left: 2%;
+        font-size: 19px;
+        text-shadow: 2px  0px rgba(rgb(5, 4, 1), 0.6);
+    }
+
+    .pp-reddt{
+        margin-left: 2%;
+        font-size: 16px;
+        text-shadow: 2px  0px rgba(rgb(5, 4, 1), 0.6);
+        border-bottom: 2px solid goldenrod;
+    }
+
+}
+
+.pp-rvin{
+    margin-left: 5%;
+    margin-top: 10%;
+    font-family: $h;
+    padding-bottom: 40px;
+
+    .pp-rvn{
+          font-size: 17px;
+         
+    }
+
+    .pp-rvinp{
+        height: 49px;
+        width: 33%;
+        font-size: 18px;
+        border-radius: 10px;
+        background-color: transparent;
+        border: 1px solid goldenrod;
+        color: $w;
+
+        &:focus{
+            outline: none;
+        }
+    }
+
+    .pp-rvta{
+        width: 33%;
+        font-size: 18px;
+        border-radius: 10px;
+        background-color: transparent;
+        border: 1px solid goldenrod;
+        color: $w;
+    }
+
+    .pp-rvbt{
+    border: 2px solid black;
+    font-family: $c;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 4%;
+    margin-left: 4%;
+    transition: 0.8s;
+    background: linear-gradient(white,gray);  
+
+    &:hover{
+        background: linear-gradient(grey,black);  
+        font-family: $c;
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+        transition: 0.8s;
+    }
+}
+}
+
+.pmm-img{
+    width: 40px;
+    height: 40px;
+}
+
+.pp-mdf{
+      
+    background-color: rgba(0, 0, 0, 0.6) !important;
+    
+}
+
+.pp-mdd{
+  margin-top: 10%;
+  background-color: rgba(0, 0, 0, 0.9);
+  border: 2px solid goldenrod;
+  border-radius: 10px;
+  width: 70%-1%;
+}
+
+.pp-rst{
+  font-family: 'Lobster', cursive;
+  font-weight: bolder;
+  font-size: 25px;
+  color: goldenrod;
+  margin-top: 4%;
+  text-decoration: overline;
+  text-shadow: 1px  0px rgba(rgb(46, 22, 22), 0.6);
+}
+
+.pm-img{
+    width: 100px;
+    height: 100px;
+}

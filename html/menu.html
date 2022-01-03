@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/food.css">
+    <link rel="stylesheet" href="../css/reserve.css">
+    <link rel="stylesheet" href="../css/checkout.css">
+    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body class="container-fluid mn-bdy">
+
+    <nav class="navbar navbar-primary navbar-expand-md d-flex justify-content-between w-100 n-s">
+        <div class="d-flex justify-content-around w-50 p-0">
+
+
+            <div>
+                <a href="index.html" class="nav-brand">
+                    <img class="n-img" src="../images/fdlogo.png" alt="">
+
+                </a>
+            </div>
+
+            <div>
+                <button class="navbar-toggler" data-toggle="collapse" onclick="openNav()">
+                    <i class="fa fa-bars" style="color: white;"></i>
+
+                   
+                </button>
+
+
+            </div>
+
+
+            <div style="width: 100%; z-index: 1000;" id="myNav" class="overlay">
+    
+
+                <a href="javascript:void(0)"
+                        class="closebtn" onclick="closeNav()">
+                        ×
+                    </a>
+                    <div class="overlay-content">
+                        <i class="fa fa-star ov-str"></i>
+                        <a href="index.html" class="ov-cont">H O M E</a>
+                        <a href="menu.html" class="ov-cont">M E N U</a>
+                        <a href="#" class="ov-cont">C O N T A C T &nbsp; U S</a>
+                        <a href="reservation.html" class="ov-cont">R E S E R V A T I O N</a>
+                        <a href="#" class="ov-cont">V I E W &nbsp; C A R T</a>
+                    </div>
+            </div>
+
+
+
+
+        </div>
+
+        <div class="collapse navbar-collapse p-0 lp-sd">
+            <input type="text" class="lp-sip form-control" placeholder="search" >
+            <button class="btn lp-sbt">SEARCH</button>
+        </div>
+
+        <div class="collapse navbar-collapse w-100 p-0 ml-5">
+            <ul class="navbar-nav ">
+                <li class="nav-item ml-2" style="min-width: fit-content;">
+                    <a href="index.html" class="nav-link  n-li">
+                        HOME
+                        <div class="n-dot1"></div>
+                    </a>
+
+                </li>
+
+                <li class="nav-item ml-2" style="min-width: fit-content;">
+                    <a href="menu.html" class="nav-link n-lih">
+                        MENU
+                        <div class="n-dot"></div>
+                        <!-- <i class="fa fa-angle-down"></i> -->
+                    </a>
+
+                </li>
+
+                <li class="nav-item ml-2" style="min-width: fit-content;" id="sgn">
+                    <a href="#" class="nav-link n-li" onclick="signInM()">
+                        SIGN IN
+                        <div class="n-dot1"></div>
+                    </a>
+
+                </li>
+
+                <div hidden class="x-wso dropdown nav-item ml-2" id="prof" style="min-width: fit-content;">
+                    <a href="#" class="nav-link n-li dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-user"></i> <span id="pName"></span>
+                        <!-- <div class="n-dot1"></div> -->
+                    </a>
+                    <span>
+                        <a href="#"  id="user"></a>
+                    </span>
+
+                    <div class=" dropdown-menu lp-dd">
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link ml-3 n-li">
+                                Profile
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="ml-3">
+                                <button class="btn btn-danger" style="font-weight: 600;" onclick="signOut()">
+                                    SIGN OUT
+                                </button>
+                            </a>
+                        </li>
+
+                    </div>
+                </div>
+
+                <li class="nav-item ml-2" style="min-width: fit-content;">
+                    <a href="reservation.html" class="nav-link n-li">
+                        RESERVATIONS
+                        <div class="n-dot1"></div>
+                    </a>
+
+                </li>
+
+                <button class="nav-item n-scb ml-2" style="min-width: fit-content; position: relative;" onclick="openCart()">
+                    <i class="fa fa-shopping-cart n-sc"></i>
+                    <div id="cNumb" class="n-scco"></div>
+                </button>
+
+            </ul>
+
+
+
+        </div>
+
+    </nav>
+
+
+    <main class="d-flex justify-content-between m-0 x-zoom">
+        <div class=" p-0 ">
+            <div class="mn-sbar ">
+                <ul class=" nav-tabs m-0 p-0" style="width: 100%;">
+
+                    <div class="mn-t1">
+                        M e n u
+                    </div>
+
+                    <button onclick="showFoodListA()" class="btn mn-btn p-0" data-toggle="tab" href="#a">
+                        <p class="mn-pt">BREAKFAST</p>
+                    </button>
+
+                    <button onclick="showFoodListB()" class="btn mn-btn p-0" data-toggle="tab" href="#b">
+                        <p class="mn-pt">STARTERS</p>
+                    </button>
+
+                    <button onclick="showFoodListC()" class="btn mn-btn p-0" data-toggle="tab" href="#c">
+                        <p class="mn-pt">LUNCH</p>
+                    </button>
+
+                    <button onclick="showFoodListD()" class="btn mn-btn p-0" data-toggle="tab" href="#d">
+                        <p class="mn-pt">DINNER</p>
+                    </button>
+
+                    <button onclick="showFoodListE()" class="btn mn-btn p-0" data-toggle="tab" href="#e">
+                        <p class="mn-pt">CONTINENTAL</p>
+                    </button>
+
+                    <button onclick="showFoodListF()" class="btn mn-btn p-0" data-toggle="tab" href="#f">
+                        <p class="mn-pt">GRILLS</p>
+                    </button>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class=" p-0 m-0">
+            <div class=" mn-tbcont">
+                <div class="container-fluid " id="a">
+
+                    <div hidden id="brkfst" class="mn-fshn x-zoom">
+                        
+
+                    </div>
+
+
+                </div>
+
+                <div class="container-fluid" id="b">
+                    <!-- <div>
+                        <h5 id="showin" class="mn-nws">NOW SHOWING</h5>
+                    </div> -->
+
+                    <div hidden id="strt" class="mn-fshn x-zoom">
+
+                    </div>
+
+
+                </div>
+
+                <div class="container-fluid" id="c">
+                    <!-- <div>
+                        <h5 id="showin" class="mn-nws">NOW SHOWING</h5>
+                    </div> -->
+
+                    <div hidden id="lunch" class="mn-fshn x-zoom">
+
+                    </div>
+
+
+                </div>
+
+                <div class="container-fluid" id="d">
+                    <!-- <div>
+                        <h5 id="showin" class="mn-nws">NOW SHOWING</h5>
+                    </div> -->
+
+                    <div hidden id="diner" class="mn-fshn x-zoom">
+
+                    </div>
+
+
+                </div>
+
+                <div class="container-fluid" id="e">
+                    <!-- <div>
+                        <h5 id="showin" class="mn-nws">NOW SHOWING</h5>
+                    </div> -->
+
+                    <div hidden id="contin" class="mn-fshn x-zoom">
+
+                    </div>
+
+
+                </div>
+
+                <div class="container-fluid" id="f">
+                    <!-- <div>
+                        <h5 id="showin" class="mn-nws">NOW SHOWING</h5>
+                    </div> -->
+
+                    <div hidden id="grills" class="mn-fshn x-zoom">
+
+                    </div>
+
+
+                </div>
+            </div>
+
+    </main>
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+
+<script src="../js/foodie.js"></script>
+
+
+<script>
+
+    let brekfst = document.getElementById('brkfst')
+    let lunch = document.getElementById('lunch')
+    let starter = document.getElementById('strt')
+    let dinner = document.getElementById('diner')
+    let continental = document.getElementById('contin')
+    let grills = document.getElementById('grills')
+
+    function showFoodListA(params) {
+        brekfst.innerHTML = ""
+        brekfst.hidden = false;
+        lunch.hidden = true;
+        grills.hidden = true;
+        starter.hidden = true;
+        dinner.hidden = true;
+        continental.hidden = true;
+
+        foods.forEach((food, i) => {
+            if (food.category == 'BREAKFAST') {
+                document.getElementById('brkfst').innerHTML += `
+                <div class="lp-menf1">
+                    <div class="lp-mnam1">
+       
+                        <p class="lp-mnft1">${food.foodDeets} </p>
+
+                        <h6 class="lp-mpri1">${food.foodPrice}</h6>
+                        <div class="lp-dmbt1" onclick = "openPPage(event)">
+                            <button class="btn lp-mbt1"> 
+                            O R D E R &nbsp; N O W
+                            </button>
+                            <span class = 'pIndex' hidden>${i}</span>
+                        </div>
+                 </div>
+
+                    <div class="lp-meni1" >
+                        <img class="lp-menim1"  src="${food.imagePath}" alt="">
+                        <h5 class="lp-mnh1">${food.foodName}</h5>
+                    </div>
+              </div>`
+
+            }
+
+
+
+
+
+
+
+
+        });
+
+    }
+
+
+    function showFoodListC(params) {
+        lunch.innerHTML = ""
+        lunch.hidden = false;
+        dinner.hidden = true;
+        grills.hidden = true;
+        continental.hidden = true;
+        brekfst.hidden = true;
+        starter.hidden = true;
+        foods.forEach((food, i) => {
+            if (food.category == 'LUNCH') {
+                document.getElementById('lunch').innerHTML += `
+                <div class="lp-menf1">
+                    <div class="lp-mnam1">
+       
+                        <p class="lp-mnft1">${food.foodDeets} </p>
+
+                        <h6 class="lp-mpri1">${food.foodPrice}</h6>
+                        <div class="lp-dmbt1" onclick = "openPPage(event)">
+                            <button class="btn lp-mbt1"> 
+                            O R D E R &nbsp; N O W
+                            </button>
+                            <span class = 'pIndex' hidden>${i}</span>
+                        </div>
+                 </div>
+
+                    <div class="lp-meni1" >
+                        <img class="lp-menim1"  src="${food.imagePath}" alt="">
+                        <h5 class="lp-mnh1">${food.foodName}</h5>
+                    </div>
+              </div>`
+
+            }
+        });
+    }
+
+
+    function showFoodListB(params) {
+        starter.innerHTML = ""
+        lunch.hidden = true;
+        starter.hidden = false;
+        grills.hidden = true;
+        brekfst.hidden = true;
+        dinner.hidden = true;
+        continental.hidden = true;
+        foods.forEach((food, i) => {
+            if (food.category == 'STARTER') {
+                starter.innerHTML += `
+                <div class="lp-menf1">
+                    <div class="lp-mnam1">
+       
+                        <p class="lp-mnft1">${food.foodDeets} </p>
+
+                        <h6 class="lp-mpri1">${food.foodPrice}</h6>
+                        <div class="lp-dmbt1" onclick = "openPPage(event)">
+                            <button class="btn lp-mbt1"> 
+                            O R D E R &nbsp; N O W
+                            </button>
+                            <span class = 'pIndex' hidden>${i}</span>
+                        </div>
+                 </div>
+
+                    <div class="lp-meni1" >
+                        <img class="lp-menim1"  src="${food.imagePath}" alt="">
+                        <h5 class="lp-mnh1">${food.foodName}</h5>
+                    </div>
+              </div>`
+
+            }
+        });
+    }
+
+
+    function showFoodListD(params) {
+        dinner.innerHTML = ""
+        dinner.hidden = false;
+        lunch.hidden = true;
+        starter.hidden = true;
+        grills.hidden = true;
+        brekfst.hidden = true;
+        continental.hidden = true;
+        foods.forEach((food, i) => {
+            if (food.category == 'DINNER') {
+                dinner.innerHTML += `
+                <div class="lp-menf1">
+                    <div class="lp-mnam1">
+       
+                        <p class="lp-mnft1">${food.foodDeets} </p>
+
+                        <h6 class="lp-mpri1">${food.foodPrice}</h6>
+                        <div class="lp-dmbt1" onclick = "openPPage(event)">
+                            <button class="btn lp-mbt1"> 
+                            O R D E R &nbsp; N O W
+                            </button>
+                            <span class = 'pIndex' hidden>${i}</span>
+                        </div>
+                 </div>
+
+                    <div class="lp-meni1" >
+                        <img class="lp-menim1"  src="${food.imagePath}" alt="">
+                        <h5 class="lp-mnh1">${food.foodName}</h5>
+                    </div>
+              </div>`
+
+            }
+        });
+    }
+
+
+    function showFoodListE(params) {
+        continental.innerHTML = ""
+        lunch.hidden = true;
+        starter.hidden = true;
+        grills.hidden = true;
+        continental.hidden = false;
+        brekfst.hidden = true;
+        dinner.hidden = true;
+        foods.forEach((food, i) => {
+            if (food.category == 'CONTINENTAL') {
+                continental.innerHTML += `
+                <div class="lp-menf1">
+                    <div class="lp-mnam1">
+       
+                        <p class="lp-mnft1">${food.foodDeets} </p>
+
+                        <h6 class="lp-mpri1">${food.foodPrice}</h6>
+                        <div class="lp-dmbt1" onclick = "openPPage(event)">
+                            <button class="btn lp-mbt1"> 
+                            O R D E R &nbsp; N O W
+                            </button>
+                            <span class = 'pIndex' hidden>${i}</span>
+                        </div>
+                 </div>
+
+                    <div class="lp-meni1" >
+                        <img class="lp-menim1"  src="${food.imagePath}" alt="">
+                        <h5 class="lp-mnh1">${food.foodName}</h5>
+                    </div>
+              </div>`
+
+            }
+        });
+    }
+
+    function showFoodListF(params) {
+        grills.innerHTML = ""
+        lunch.hidden = true;
+        starter.hidden = true;
+        grills.hidden = false;
+        continental.hidden = true;
+        brekfst.hidden = true;
+        dinner.hidden = true;
+        foods.forEach((food, i) => {
+            if (food.category == 'GRILLS') {
+                grills.innerHTML += `
+                <div class="lp-menf1">
+                    <div class="lp-mnam1">
+       
+                        <p class="lp-mnft1">${food.foodDeets} </p>
+
+                        <h6 class="lp-mpri1">${food.foodPrice}</h6>
+                        <div class="lp-dmbt1" onclick = "openPPage(event)">
+                            <button class="btn lp-mbt1"> 
+                            O R D E R &nbsp; N O W
+                            </button>
+                            <span class = 'pIndex' hidden>${i}</span>
+                        </div>
+                 </div>
+
+                    <div class="lp-meni1" >
+                        <img class="lp-menim1"  src="${food.imagePath}" alt="">
+                        <h5 class="lp-mnh1">${food.foodName}</h5>
+                    </div>
+              </div>`
+
+            }
+        });
+    }
+
+    function sI(params) {
+        let loggedIn;
+    if (localStorage.getItem('logIn')) {
+        loggedIn = JSON.parse(localStorage.getItem('logIn'));
+        
+    }
+    if (localStorage.getItem('sgnInfo')) {
+        signupDetails = JSON.parse(localStorage.getItem('sgnInfo'));
+    }
+
+    if (localStorage.getItem('sIdts')) {
+        e = JSON.parse(localStorage.getItem('sIdts'));
+    }
+   
+    if (signupDetails.length > 0) {
+        for (let f = 0; f < signupDetails.length; f++) {
+            if (f == e) {
+                
+                console.log(signupDetails[f].fName);
+               pName.innerHTML = signupDetails[f].fName
+               console.log(pName.innerHTML);
+            }
+            
+        }
+    }
+    if (loggedIn == true) {
+        sgn.hidden = true;
+        prof.hidden = false;
+        loggedIn = false
+    }
+
+    else if (loggedIn == false) {
+        sgn.hidden = false;
+        prof.hidden = true;
+    }
+
+}
+
+sI()
+
+
+
+</script>

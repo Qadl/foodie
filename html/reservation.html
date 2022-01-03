@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/ppage.css">
+    <link rel="stylesheet" href="../css/food.css">
+    <link rel="stylesheet" href="../css/cart.css">
+    <link rel="stylesheet" href="../css/reserve.css">
+    <link rel="stylesheet" href="../css/checkout.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body style="position: relative;">
+    <main class="container-fluid rr-top">
+        <nav class=" navbar navbar-primary navbar-expand-md d-flex justify-content-between w-100 n-s">
+            <div class="d-flex justify-content-around w-50 p-0">
+
+
+                <div>
+                    <a href="index.html" class="nav-brand">
+                        <img class="n-img" src="../images/fdlogo.png" alt="">
+
+                    </a>
+                </div>
+
+                <div>
+                    <button class="navbar-toggler" data-toggle="collapse" onclick="openNav()">
+                        <i class="fa fa-bars" style="color: white;"></i>
+
+
+                    </button>
+
+
+                </div>
+
+
+                <div style="width: 100%;" id="myNav" class="overlay">
+
+
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+                        ×
+                    </a>
+                    <div class="overlay-content">
+                        <i class="fa fa-star ov-str"></i>
+                        <a href="index.html" class="ov-cont">H O M E</a>
+                        <a href="menu.html" class="ov-cont">M E N U</a>
+                        <a href="#" class="ov-cont">C O N T A C T &nbsp; U S</a>
+                        <a href="reservation.html" class="ov-cont">R E S E R V A T I O N</a>
+                        <a href="cart.html" class="ov-cont">V I E W &nbsp; C A R T</a>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+            <div class="collapse navbar-collapse p-0 lp-sd">
+                <input type="text" class="lp-sip form-control" placeholder="search" >
+                <button class="btn lp-sbt">SEARCH</button>
+            </div>
+
+            <div class="collapse navbar-collapse w-100 p-0 ml-5">
+                <ul class="navbar-nav ">
+                    <li class="nav-item ml-2" style="min-width: fit-content;">
+                        <a href="index.html" class="nav-link  n-li">
+                            HOME
+                            <div class="n-dot1"></div>
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item ml-2" style="min-width: fit-content;">
+                        <a href="menu.html" class="nav-link n-li">
+                            MENU
+                            <div class="n-dot1"></div>
+                            <!-- <i class="fa fa-angle-down"></i> -->
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item ml-2" style="min-width: fit-content;" id="sgn">
+                        <a href="#" class="nav-link n-li" onclick="signInM()">
+                            SIGN IN
+                            <div class="n-dot1"></div>
+                        </a>
+    
+                    </li>
+    
+    
+    
+                    <div hidden class="x-wso dropdown nav-item ml-2" id="prof" style="min-width: fit-content;">
+                        <a href="#" class="nav-link n-li dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-user"></i> <span id="pName"></span>
+                            <!-- <div class="n-dot1"></div> -->
+                        </a>
+                        <span>
+                            <a href="#"  id="user"></a>
+                        </span>
+    
+                        <div class=" dropdown-menu lp-dd">
+    
+                            <li class="nav-item">
+                                <a href="#" class="nav-link ml-3 n-li">
+                                    Profile
+                                </a>
+    
+                            </li>
+    
+                            <li class="nav-item">
+                                <a href="#" class="ml-3">
+                                    <button class="btn btn-danger" style="font-weight: 600;" onclick="signOut()">
+                                        SIGN OUT
+                                    </button>
+                                </a>
+                            </li>
+    
+                        </div>
+                    </div>
+    
+
+                    <li class="nav-item ml-2" style="min-width: fit-content;">
+                        <a href="reservation.html" class="nav-link n-lih">
+                            RESERVATIONS
+                            <div class="n-dot"></div>
+                        </a>
+
+                    </li>
+
+                    <button class="nav-item n-scb ml-2" style="min-width: fit-content; position: relative;" onclick="openCart()">
+                        <i class="fa fa-shopping-cart n-sc"></i>
+                        <div id="cNumb" class="n-scco"></div>
+                    </button>
+
+                </ul>
+
+
+
+            </div>
+
+        </nav>
+
+
+
+        <div class="rr-ovel x-zoom">
+            <div class="row">
+                <div class="lp-resin card card-body col-sm-7  rr-card">
+                    <div class="lp-rstd"
+                        style="display: flex; justify-content: center; align-items: center; margin-top: 2%;">
+                        <h5 class="lp-rst">T a b l e &nbsp; R e s e r v a t i o n </h5>
+                    </div>
+
+                    <div class="form-group ml-5">
+                        <p class="lp-rinp" style="color: white;">DATE <span style="color: red;">*</span></p>
+                        <input type="date" class="form-control lp-inpa" style="width: 80%;" id="rvreserve">
+                    </div>
+                    <div class="lp-resin1">
+
+
+                        <div class="form-group ml-5">
+                            <p class="lp-rinp" style="color: white;">TIME<span style="color: red;">*</span></p>
+                            <input type="time" class="form-control lp-inpa" id="rvreserve">
+                        </div>
+
+                        <div class="form-group ml-3">
+                            <p class="lp-rinp" style="color: white;">SEATS<span style="color: red;">*</span></p>
+                            <input type="number" class="form-control lp-inpa" id="rvreserve">
+                        </div>
+                    </div>
+
+                    <div class="x-inp1 ml-5">
+                        <input type="text" class="form-control x-inp" required id="rvreserve">
+                        <span class="x-float">NAME *</span>
+                    </div>
+
+                    <div class="x-inp1 ml-5">
+                        <input type="text" class="form-control x-inp" required id="rvreserve">
+                        <span class="x-float">TELEPHONE NUMBER *</span>
+                    </div>
+
+                    <div class="x-inp1 ml-5">
+                        <input type="text" class="form-control x-inp" required id="rvreserve">
+                        <span class="x-float">EMAIL *</span>
+                    </div>
+
+                    <div class="x-inp1 ml-5">
+                        <input type="text" class="form-control x-inp" required id="rvreserve">
+                        <span class="x-float">NOTES</span>
+                    </div>
+
+
+
+                    <div
+                        style="margin-bottom: 8%; margin-top: 7%; display: flex; justify-content: center; align-items: center;">
+                        <button class="btn lp-resbt" onclick="reservatioN()">
+                            RESERVATION
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="rr-ovel card card-body col-sm-3 ml-3  rr-card2" style="margin-top: 1%;">
+                    <div>
+                        <p class="ch-tx">Type code to check your reservation</p>
+                        <input type="text" placeholder="CODE" class="ch-inp" id="chrs">
+
+                    </div>
+
+                    <div>
+                        <button class="btn chr-bt" onclick="checkRsv()">CHECK RESERVATION</button>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </main>
+
+
+    <div hidden class="rsv-msg" id="rsmsg">
+        <div class="rsv-txt">
+            <p class="rs-txt">you have succesfuly acquired a seat at the prestigious foodie de la mans restaurant.</p>
+            <p class="rs-txt">your seat reservation code is <span style="font-weight: bolder;">F</span>
+                <span style="font-weight: bolder;" id="code"></span>
+            </p>
+            <p class="rs-txt">Please ensure to provide it to our waiters on your reservation date.</p>
+            <p class="rs-txt">We look forward to seeing you.. Gracias</p>
+
+            <div class="rs-tbb"><button class="btn rsv-tbt" onclick="okay()">OKAY</button></div>
+        </div>
+
+    </div>
+
+    <div hidden class="rr-load" id="loader">
+        <div class="lds-ripple">
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+
+    <div id="y" class="modal fade rr-mdf">
+        <div class="modal-dialog rr-mdd" >
+            <div class="modal-content" style="background-color: rgba(0, 0, 0, 0.6);" id="modaly" >
+
+                <div class="modal-header d-flex justify-content-between">
+                    <img class="rd-img" src="../images/fdlogo.png" alt="">
+                    <h5 class="modal-title ml-5 mt-2 rr-rst">C h e c k &nbsp; R e s e r v a t i o n</h5>
+
+                    <button type="button" class="close" data-dismiss="modal" onclick="X()">&times;</button>
+
+                </div>
+
+                <!-- <div class="modal-body">
+                   <div class="rd-hdd"><h4 class="rd-hd">RESERVATION DETAILS</h4></div>
+                   <p class="rd-inf">NAME : <span class="rd-info" > QADRI</span></p>
+                   <p class="rd-inf">SEAT NO : <span class="rd-info" >4</span></p>
+                   <p class="rd-inf">TELEPHONE NUMBER : <span class="rd-info" >0701800848</span></p>
+                   <p class="rd-inf">DATE : <span class="rd-info" >02/08/2121</span></p>
+                   <p class="rd-inf">TIME : <span class="rd-info" >3:57PM</span></p>
+                   
+                   
+
+
+                    
+                </div> -->
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+
+<script src="../js/foodie.js"></script>
+
+
+<script>
+   
+   function sI(params) {
+        let loggedIn;
+    if (localStorage.getItem('logIn')) {
+        loggedIn = JSON.parse(localStorage.getItem('logIn'));
+        
+    }
+    if (localStorage.getItem('sgnInfo')) {
+        signupDetails = JSON.parse(localStorage.getItem('sgnInfo'));
+    }
+
+    if (localStorage.getItem('sIdts')) {
+        e = JSON.parse(localStorage.getItem('sIdts'));
+    }
+   
+    if (signupDetails.length > 0) {
+        for (let f = 0; f < signupDetails.length; f++) {
+            if (f == e) {
+                console.log(signupDetails[f].fName);
+               pName.innerHTML = signupDetails[f].fName
+            }
+            
+        }
+    }
+    if (loggedIn == true) {
+        sgn.hidden = true;
+        prof.hidden = false;
+        loggedIn = false
+    }
+
+    else if (loggedIn == false) {
+        sgn.hidden = false;
+        prof.hidden = true;
+    }
+
+}
+
+sI()
+
+</script>
